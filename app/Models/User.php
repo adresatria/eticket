@@ -5,7 +5,6 @@ namespace App\Models;
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Notifications\Notifiable;
-use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
@@ -21,16 +20,21 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'name',
+        'nama',
         'email',
         'password',
         'role',
+        'nomor_hp',
+        'tanggal_lahir',
+        'jenis_kelamin',
+        'provinsi',
+        'kabupaten',
+        'kecamatan',
+        'alamat',
     ];
 
-    public function customer():HasOne
-    {
-        return $this->hasOne(DetailPengguna::class, 'id', 'user_id');
-    }
+    
+
 
     /**
      * The attributes that should be hidden for serialization.

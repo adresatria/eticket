@@ -4,10 +4,8 @@ namespace Database\Seeders;
 
 use App\Models\User;
 use Illuminate\Support\Str;
-use App\Models\DetailPengguna;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 class UserSeeder extends Seeder
 {
@@ -55,15 +53,6 @@ class UserSeeder extends Seeder
             'role' => 5, //pengunjung
             'remember_token' => Str::random(60),
         ]);
-
-        DetailPengguna::create([
-        'user_id' => 2,
-        'nik' => '210302035',
-        'nohp' => '085878653934',
-        'alamat' => 'kalisabuk',
-        'jenisid' => 'KK',
-        'fotoid' => 'default.jpg',
-        'fotobersamaid' => 'default.jpg',
-        ]);
     }
 }
+     
